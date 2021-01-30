@@ -1,0 +1,30 @@
+{
+  "name": "testloginregistration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "io": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "ejs": "^3.1.2",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "express-session": "^1.17.1",
+    "moment": "^2.27.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.3",
+    "util.promisify": "^1.0.1"
+  },
+  "dependencies": {
+    "consola": "^2.15.0",
+    "express-validator": "^6.6.1",
+    "method-override": "^3.0.0"
+  }
+}
