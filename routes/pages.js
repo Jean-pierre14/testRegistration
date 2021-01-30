@@ -8,9 +8,9 @@ router.get('/', (req, res) => {
 
     if (user) {
         res.redirect('/home')
-        return
+        res.render('index')
     }
-    res.render('index')
+    
 })
 
 router.get('/home', (req, res) => {
@@ -36,6 +36,7 @@ router.post('/login', (req, res) => {
     })
 })
 router.post('/register', (req, res) => {
+    
     let userInput = {
         username: req.body.username,
         fullname: req.body.fullname,
