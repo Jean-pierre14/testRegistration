@@ -4,11 +4,19 @@ const session = require('express-session')
 const router = require('./routes/pages')
 const { success, error } = require('consola')
 
-const PORT = process.env.PORT || 7000
+const PORT = 7000
 const app = exp()
+
+const db = require('./config/db')
+
+db.connect((err, con) => {
+    if (err) throw err
+    success({message: `Connected to the database`, badge: true})
+})
 
 app.use(exp.urlencoded({ extended: false }))
 app.use(exp.static(path.join(__dirname, 'public')))
+
 app.use(session({
     secret: 'grace',
     resave: false,
