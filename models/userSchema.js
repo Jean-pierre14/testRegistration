@@ -1,5 +1,5 @@
 const db = require('../config/db')
-class User{
+class User {
     static find(cb) {
         let sql = "SELECT * FROM users ORDER BY id"
         db.query(sql, (err, results) => {

@@ -3,15 +3,17 @@ const path = require('path')
 const session = require('express-session')
 const router = require('./routes/pages')
 const { success, error } = require('consola')
+const dotenv = require('dotenv')
 
-const PORT = 7000
+const PORT = process.env.PORT || 5000
 const app = exp()
 
 const db = require('./config/db')
 
+dotenv.config()
 db.connect((err, con) => {
     if (err) throw err
-    success({message: `Connected to the database`, badge: true})
+    success({ message: `Connected to the database`, badge: true })
 })
 
 app.use(exp.urlencoded({ extended: false }))
