@@ -1,6 +1,7 @@
 const exp = require('express')
 const path = require('path')
 const session = require('express-session')
+const bodyPaser = require('body-parser')
 const router = require('./routes/pages')
 const { success, error } = require('consola')
 const dotenv = require('dotenv')
@@ -12,10 +13,11 @@ const db = require('./config/db')
 dotenv.config()
 db.connect((err, con) => {
     if (err) throw err
-    success({ message: `Connected to the database ${con.database}`, badge: true })
+    success({ message: `Connected to the database`, badge: true })
 })
 
 app.use(exp.urlencoded({ extended: false }))
+app.use(bodyPaser.urlencoded({ extended: false }))
 app.use(exp.static(path.join(__dirname, 'public')))
 
 app.use(session({

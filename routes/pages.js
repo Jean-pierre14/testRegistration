@@ -18,5 +18,15 @@ router.get('/get/:id', (req, res) => {
         })
     })
     // post
+router.post('/addUser', (req, res) => {
+    const { username, fullname, email, password } = req.body
+
+    if (!username || !fullname || !email || !password) {
+        res.json("Error")
+    } else {
+        res.json("Pass no error")
+    }
+
+})
 
 module.exports = router
