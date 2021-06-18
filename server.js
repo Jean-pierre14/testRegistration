@@ -7,13 +7,12 @@ const dotenv = require('dotenv')
 
 const PORT = process.env.PORT || 5000
 const app = exp()
-
 const db = require('./config/db')
 
 dotenv.config()
 db.connect((err, con) => {
     if (err) throw err
-    success({ message: `Connected to the database`, badge: true })
+    success({ message: `Connected to the database ${con.database}`, badge: true })
 })
 
 app.use(exp.urlencoded({ extended: false }))

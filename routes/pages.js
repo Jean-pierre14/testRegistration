@@ -10,11 +10,13 @@ router.get('/', (req, res) => {
         res.json(results)
     })
 })
+
 router.get('/get/:id', (req, res) => {
-    let id = req.params.id
-    User.findById(id, (result) => {
-        res.json(result)
+        let id = req.params.id
+        User.findById(id, (result) => {
+            res.json(result)
+        })
     })
-})
+    // post
 
 module.exports = router
